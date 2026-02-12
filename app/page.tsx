@@ -1,65 +1,123 @@
-import Image from "next/image";
+import Link from 'next/link';
+import { ArrowRight, MessageCircle, Trophy, Briefcase, Bell } from 'lucide-react';
+import { Button } from '@/components/ui/Button';
+import { Card } from '@/components/ui/Card';
+import { TypewriterEffect } from '@/components/ui/TypewriterEffect';
 
 export default function Home() {
+  const headlines = [
+    { highlight: "อัปคะแนนจริง", rest: " ด้วยวิธีเรียนที่เหมือนเล่น" },
+    { highlight: "พูดเล่นๆ", rest: " จนเก่งจริง" },
+  ];
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="flex flex-col min-h-[calc(100vh-64px)] bg-bg-main">
+      {/* Brand Hero Section */}
+      <section className="flex flex-grow flex-col justify-center px-4 pt-20 pb-10 text-center sm:px-6 lg:px-8">
+        <div className="container mx-auto max-w-4xl">
+          <h1 className="mb-6 h-28 sm:h-36 md:h-44 text-5xl font-bold tracking-tight text-text-main sm:text-6xl md:text-7xl flex items-center justify-center">
+            <TypewriterEffect phrases={headlines} />
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="mx-auto mb-10 max-w-2xl text-xl text-slate-600 sm:text-2xl">
+            แพลตฟอร์มภาษาอังกฤษที่เปลี่ยนเรื่องยากให้เป็นเรื่องง่าย เริ่มต้นด้วย TOEIC เพื่อโอกาสการทำงาน แล้วสานต่อสู่การพูดที่มั่นใจ
           </p>
+          
+          <div className="flex flex-col items-center justify-center gap-4">
+            <Link href="/toeic">
+              <Button size="lg" className="h-16 px-8 text-xl shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all">
+                เริ่มเช็กเลเวล TOEIC ของคุณ
+                <ArrowRight className="ml-2 h-6 w-6" />
+              </Button>
+            </Link>
+            <span className="text-sm font-medium text-slate-500 bg-slate-100 px-3 py-1 rounded-full border border-slate-200">
+              ✨ First Step for Career
+            </span>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Feature Showcase Section */}
+      {/* Learning Path Roadmap Section */}
+      <section className="bg-slate-50 py-10 px-4 sm:px-6 lg:px-8 border-t border-slate-200/60">
+        <div className="container mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-text-main sm:text-4xl mb-4">
+              Learning Roadmap
+            </h2>
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+              เส้นทางสู่ความสำเร็จเริ่มจากการวัดระดับ แล้วพัฒนาทักษะการพูด จนถึงการใช้ในงานจริง
+            </p>
+          </div>
+          
+          <div className="grid gap-8 md:grid-cols-3 max-w-7xl mx-auto">
+            {/* Step 1: Get Certified */}
+            <Link href="/toeic" className="block group h-full">
+              <Card className="h-full border-2 border-primary/20 relative overflow-hidden transition-all hover:border-primary hover:shadow-active hover:-translate-y-1">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-indigo-600"></div>
+                <div className="p-6 flex flex-col h-full">
+                  <div className="mb-6 flex items-center justify-between">
+                    <div className="p-3 rounded-2xl bg-indigo-100 text-indigo-600">
+                      <Trophy className="h-8 w-8" />
+                    </div>
+                    <span className="px-3 py-1 rounded-full text-xs font-bold bg-indigo-100 text-indigo-700">
+                      Step 1
+                    </span>
+                  </div>
+                  <h3 className="text-xl font-bold text-text-main mb-2">Get Certified</h3>
+                  <p className="text-slate-600 text-sm mb-6 flex-grow">
+                    อัปคะแนน TOEIC ให้โปรไฟล์ปัง ด้วยคลังข้อสอบจริงและการวิเคราะห์จุดอ่อน
+                  </p>
+                  <div className="flex items-center text-primary font-bold text-sm bg-primary/5 p-3 rounded-lg justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+                    เริ่มทดสอบเลย <ArrowRight className="ml-2 h-4 w-4" />
+                  </div>
+                </div>
+              </Card>
+            </Link>
+
+            {/* Step 2: Get Talking */}
+            <Card className="h-full border-2 border-dashed border-slate-200 bg-slate-50/50 opacity-100 relative">
+               <div className="p-6 flex flex-col h-full">
+                  <div className="mb-6 flex items-center justify-between">
+                    <div className="p-3 rounded-2xl bg-slate-200 text-slate-500">
+                      <MessageCircle className="h-8 w-8" />
+                    </div>
+                    <span className="px-3 py-1 rounded-full text-xs font-bold bg-slate-200 text-slate-600">
+                      Step 2
+                    </span>
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-600 mb-2">Get Talking</h3>
+                  <p className="text-slate-500 text-sm mb-6 flex-grow">
+                    ฝึกพูดให้คล่องเหมือนเจ้าของภาษา กับ AI คู่ซ้อมที่พร้อมคุยกับคุณ 24 ชม.
+                  </p>
+                  <Button variant="ghost" className="w-full border-2 border-slate-200 text-slate-500 hover:bg-slate-200 hover:text-slate-700">
+                    <Bell className="mr-2 h-4 w-4" /> แจ้งเตือนเมื่อเปิดใช้
+                  </Button>
+                </div>
+            </Card>
+
+            {/* Step 3: Get Working */}
+            <Card className="h-full border-2 border-dashed border-slate-200 bg-slate-50/50 opacity-100 relative">
+               <div className="p-6 flex flex-col h-full">
+                  <div className="mb-6 flex items-center justify-between">
+                    <div className="p-3 rounded-2xl bg-slate-200 text-slate-500">
+                      <Briefcase className="h-8 w-8" />
+                    </div>
+                    <span className="px-3 py-1 rounded-full text-xs font-bold bg-slate-200 text-slate-600">
+                      Step 3
+                    </span>
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-600 mb-2">Get Working</h3>
+                  <p className="text-slate-500 text-sm mb-6 flex-grow">
+                    สื่อสารในที่ทำงานอย่างมั่นใจ ด้วยคอร์ส Business English ระดับมืออาชีพ
+                  </p>
+                  <Button variant="ghost" className="w-full border-2 border-slate-200 text-slate-500 hover:bg-slate-200 hover:text-slate-700">
+                    <Bell className="mr-2 h-4 w-4" /> แจ้งเตือนเมื่อเปิดใช้
+                  </Button>
+                </div>
+            </Card>
+          </div>
         </div>
-      </main>
+      </section>
     </div>
   );
 }
