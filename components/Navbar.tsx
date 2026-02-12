@@ -14,7 +14,7 @@ import { useState, useRef, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 
 export default function Navbar() {
-  const { user, logout } = useAuthStore();
+  const { user, signOut } = useAuthStore();
   const router = useRouter();
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -37,10 +37,13 @@ export default function Navbar() {
   // Don't show navbar on login/register pages
   if (['/login', '/register'].includes(pathname)) return null;
 
-  const handleLogout = () => {
-    logout();
+  const handleLogout = async () => {
+    await signOut();
     router.push('/login');
   };
+
+  const displayName = user?.user_metadata?.full_name || user?.email?.split('@')[0] || 'User';
+  const displayEmail = user?.email || '';
 
   return (
     <nav className="sticky top-0 z-40 w-full border-b border-slate-200 bg-white/80 backdrop-blur-md">
@@ -62,7 +65,7 @@ export default function Navbar() {
                     <UserIcon size={18} />
                   </div>
                   <span className="max-w-[100px] truncate text-sm font-medium text-gray-700">
-                    {user.name}
+                    {displayName}
                   </span>
                 </div>
                 
@@ -111,7 +114,7 @@ export default function Navbar() {
                     <UserIcon size={16} />
                   </div>
                   <span className="max-w-[80px] truncate text-sm font-medium text-gray-700">
-                    {user.name}
+                    {displayName}
                   </span>
                   <ChevronDown size={14} className={cn("text-gray-400 transition-transform", isMenuOpen && "rotate-180")} />
                 </button>
@@ -125,8 +128,8 @@ export default function Navbar() {
                          <div className="mb-2 flex h-16 w-16 items-center justify-center rounded-full bg-indigo-50 text-indigo-600">
                             <UserIcon size={32} />
                          </div>
-                         <p className="font-semibold text-gray-900">{user.name}</p>
-                         <p className="text-xs text-gray-500">{user.email || 'user@example.com'}</p>
+                         <p className="font-semibold text-gray-900">{displayName}</p>
+                         <p className="text-xs text-gray-500">{displayEmail}</p>
                        </div>
                     </div>
                     
@@ -143,13 +146,12 @@ export default function Navbar() {
                       {/* Theme Toggle Placeholder */}
                       <button 
                          className="flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-indigo-600 transition-colors"
-                         onClick={() => setIsMenuOpen(false)} // Toggle theme logic here later
+                         onClick={() => setIsMenuOpen(false)}
                       >
                         <div className="flex items-center space-x-2">
                           <Moon size={18} />
                           <span>Dark Mode</span>
                         </div>
-                        {/* Toggle Switch UI */}
                          <div className="relative inline-flex h-5 w-9 items-center rounded-full bg-gray-200">
                             <span className="translate-x-1 inline-block h-3 w-3 transform rounded-full bg-white transition"/>
                          </div>
@@ -169,7 +171,6 @@ export default function Navbar() {
                 )}
               </>
             ) : (
-              // Mobile Hamburger for non-logged in users (or keep sign in buttons)
                <div className="flex items-center space-x-2">
                    <Link
                       href="/login"
@@ -188,10 +189,6 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-
-      {/* Remove old Mobile Menu render since it's now a popover for auth users. 
-          For non-auth users we showed buttons directly. 
-      */}
     </nav>
   );
 }

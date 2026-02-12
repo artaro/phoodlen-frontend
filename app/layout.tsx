@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Kanit } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { AuthProvider } from "@/components/AuthProvider";
 import { LoadingModal } from "@/components/ui/LoadingModal";
 import "./globals.css";
 
@@ -33,12 +34,14 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${kanit.variable} antialiased min-h-screen bg-bg-main text-text-main font-sans flex flex-col`}
       >
-        <Navbar />
-        <main className="flex-grow">
-          {children}
-        </main>
-        <Footer />
-        <LoadingModal />
+        <AuthProvider>
+          <Navbar />
+          <main className="flex-grow">
+            {children}
+          </main>
+          <Footer />
+          <LoadingModal />
+        </AuthProvider>
       </body>
     </html>
   );
