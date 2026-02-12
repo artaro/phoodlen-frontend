@@ -8,7 +8,7 @@ import { Fragment } from 'react';
 
 // Map route segments to friendly Thai names
 const routeNameMap: Record<string, string> = {
-  'toeic': 'คลังข้อสอบ',
+  'toeic': 'TOEIC',
   'listening': 'Listening',
   'reading': 'Reading',
   'login': 'เข้าสู่ระบบ',

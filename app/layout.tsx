@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Kanit } from "next/font/google";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import { LoadingModal } from "@/components/ui/LoadingModal";
 import "./globals.css";
 
@@ -36,6 +37,7 @@ export default function RootLayout({
         <main className="flex-grow">
           {children}
         </main>
+        <Footer />
         <LoadingModal />
       </body>
     </html>

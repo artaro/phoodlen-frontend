@@ -24,7 +24,7 @@ export default function Home() {
           
           <div className="flex flex-col items-center justify-center gap-4">
             <Link href="/toeic">
-              <Button size="lg" className="h-16 px-8 text-xl shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all">
+              <Button size="lg" className="h-16 px-8 text-xl shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all cursor-pointer">
                 เริ่มเช็กเลเวล TOEIC ของคุณ
                 <ArrowRight className="ml-2 h-6 w-6" />
               </Button>
@@ -38,7 +38,8 @@ export default function Home() {
 
       {/* Feature Showcase Section */}
       {/* Learning Path Roadmap Section */}
-      <section className="bg-slate-50 py-10 px-4 sm:px-6 lg:px-8 border-t border-slate-200/60">
+      {/* Learning Path Roadmap Section */}
+      <section className="bg-gradient-to-b from-white to-slate-50 py-16 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-text-main sm:text-4xl mb-4">
@@ -52,8 +53,8 @@ export default function Home() {
           <div className="grid gap-8 md:grid-cols-3 max-w-7xl mx-auto">
             {/* Step 1: Get Certified */}
             <Link href="/toeic" className="block group h-full">
-              <Card className="h-full border-2 border-primary/20 relative overflow-hidden transition-all hover:border-primary hover:shadow-active hover:-translate-y-1">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-indigo-600"></div>
+              <Card className="h-full border border-indigo-100 bg-white shadow-soft hover:shadow-active hover:border-indigo-300 relative overflow-hidden transition-all hover:-translate-y-1">
+                <div className="absolute top-0 left-0 w-full h-1 bg-indigo-500/20 group-hover:bg-indigo-500 transition-colors"></div>
                 <div className="p-6 flex flex-col h-full">
                   <div className="mb-6 flex items-center justify-between">
                     <div className="p-3 rounded-2xl bg-indigo-100 text-indigo-600">
@@ -67,7 +68,7 @@ export default function Home() {
                   <p className="text-slate-600 text-sm mb-6 flex-grow">
                     อัปคะแนน TOEIC ให้โปรไฟล์ปัง ด้วยคลังข้อสอบจริงและการวิเคราะห์จุดอ่อน
                   </p>
-                  <div className="flex items-center text-primary font-bold text-sm bg-primary/5 p-3 rounded-lg justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+                  <div className="flex items-center text-primary font-bold text-sm bg-primary/5 p-3 rounded-lg justify-center group-hover:bg-primary group-hover:text-white transition-colors border border-primary/20">
                     เริ่มทดสอบเลย <ArrowRight className="ml-2 h-4 w-4" />
                   </div>
                 </div>
@@ -75,7 +76,7 @@ export default function Home() {
             </Link>
 
             {/* Step 2: Get Talking */}
-            <Card className="h-full border-2 border-dashed border-slate-200 bg-slate-50/50 opacity-100 relative">
+            <Card className="h-full border border-slate-100 bg-white shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
                <div className="p-6 flex flex-col h-full">
                   <div className="mb-6 flex items-center justify-between">
                     <div className="p-3 rounded-2xl bg-slate-200 text-slate-500">
@@ -89,14 +90,14 @@ export default function Home() {
                   <p className="text-slate-500 text-sm mb-6 flex-grow">
                     ฝึกพูดให้คล่องเหมือนเจ้าของภาษา กับ AI คู่ซ้อมที่พร้อมคุยกับคุณ 24 ชม.
                   </p>
-                  <Button variant="ghost" className="w-full border-2 border-slate-200 text-slate-500 hover:bg-slate-200 hover:text-slate-700">
+                  <Button variant="ghost" className="w-full border-2 border-slate-200 text-slate-500 hover:bg-slate-200 hover:text-slate-700 cursor-pointer">
                     <Bell className="mr-2 h-4 w-4" /> แจ้งเตือนเมื่อเปิดใช้
                   </Button>
                 </div>
             </Card>
 
             {/* Step 3: Get Working */}
-            <Card className="h-full border-2 border-dashed border-slate-200 bg-slate-50/50 opacity-100 relative">
+            <Card className="h-full border border-slate-100 bg-white shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
                <div className="p-6 flex flex-col h-full">
                   <div className="mb-6 flex items-center justify-between">
                     <div className="p-3 rounded-2xl bg-slate-200 text-slate-500">
@@ -110,7 +111,7 @@ export default function Home() {
                   <p className="text-slate-500 text-sm mb-6 flex-grow">
                     สื่อสารในที่ทำงานอย่างมั่นใจ ด้วยคอร์ส Business English ระดับมืออาชีพ
                   </p>
-                  <Button variant="ghost" className="w-full border-2 border-slate-200 text-slate-500 hover:bg-slate-200 hover:text-slate-700">
+                  <Button variant="ghost" className="w-full border-2 border-slate-200 text-slate-500 hover:bg-slate-200 hover:text-slate-700 cursor-pointer">
                     <Bell className="mr-2 h-4 w-4" /> แจ้งเตือนเมื่อเปิดใช้
                   </Button>
                 </div>

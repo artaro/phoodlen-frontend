@@ -35,8 +35,8 @@ export default function Register() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-bg-main px-4 py-12 sm:px-6 lg:px-8">
-      <Card className="w-full max-w-md p-8">
+    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-slate-50 to-indigo-50 px-4 py-12 sm:px-6 lg:px-8">
+      <Card className="w-full max-w-md p-8 hover:translate-y-0 hover:shadow-soft border border-slate-100">
         <div className="mb-8 text-center">
           <h1 className="text-3xl font-bold tracking-tight text-primary">
             พูดเล่น

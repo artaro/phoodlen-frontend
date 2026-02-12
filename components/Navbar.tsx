@@ -43,7 +43,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="sticky top-0 z-40 w-full border-b bg-white/80 backdrop-blur-md">
+    <nav className="sticky top-0 z-40 w-full border-b border-slate-200 bg-white/80 backdrop-blur-md">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Brand */}
@@ -91,7 +91,7 @@ export default function Navbar() {
                 </Link>
                 <Link
                   href="/register"
-                  className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-500 transition-colors"
+                  className="rounded-xl bg-primary px-4 py-2 text-sm font-medium text-white hover:opacity-90 transition-all shadow-sm active:scale-95"
                 >
                   Sign up
                 </Link>
