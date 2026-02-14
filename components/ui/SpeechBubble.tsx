@@ -15,7 +15,7 @@ export function SpeechBubble({ message, variant = "system", className }: SpeechB
         "relative max-w-[80%] rounded-2xl px-4 py-3 text-sm shadow-sm",
         isUser
           ? "bg-primary text-white rounded-tr-sm ml-auto"
-          : "bg-white text-slate-700 rounded-tl-sm border border-slate-200 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-200",
+          : "bg-white text-slate-700 rounded-tl-sm border border-slate-200",
         className
       )}
     >

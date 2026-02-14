@@ -90,7 +90,7 @@ export default function Home() {
                   <p className="text-slate-500 text-sm mb-6 flex-grow">
                     ฝึกพูดให้คล่องเหมือนเจ้าของภาษา กับ AI คู่ซ้อมที่พร้อมคุยกับคุณ 24 ชม.
                   </p>
-                  <Button variant="ghost" className="w-full border-2 border-slate-200 text-slate-500 hover:bg-slate-200 hover:text-slate-700 cursor-pointer">
+                  <Button variant="ghost" className="w-full border-2 border-slate-200 text-slate-500 hover:text-slate-700 hover:border-slate-400 hover:bg-transparent cursor-pointer">
                     <Bell className="mr-2 h-4 w-4" /> แจ้งเตือนเมื่อเปิดใช้
                   </Button>
                 </div>
@@ -111,7 +111,7 @@ export default function Home() {
                   <p className="text-slate-500 text-sm mb-6 flex-grow">
                     สื่อสารในที่ทำงานอย่างมั่นใจ ด้วยคอร์ส Business English ระดับมืออาชีพ
                   </p>
-                  <Button variant="ghost" className="w-full border-2 border-slate-200 text-slate-500 hover:bg-slate-200 hover:text-slate-700 cursor-pointer">
+                  <Button variant="ghost" className="w-full border-2 border-slate-200 text-slate-500 hover:text-slate-700 hover:border-slate-400 hover:bg-transparent cursor-pointer">
                     <Bell className="mr-2 h-4 w-4" /> แจ้งเตือนเมื่อเปิดใช้
                   </Button>
                 </div>

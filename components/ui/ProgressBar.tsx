@@ -18,7 +18,7 @@ export function ProgressBar({ progress, className, showLabel = false }: Progress
           <span>{Math.round(clampedProgress)}%</span>
         </div>
       )}
-      <div className="h-4 w-full overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700">
+      <div className="h-4 w-full overflow-hidden rounded-full bg-slate-200">
         <div
           className="h-full rounded-full bg-accent transition-all duration-500 ease-out"
           style={{ width: `${clampedProgress}%` }}
